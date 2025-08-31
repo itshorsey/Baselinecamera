@@ -5,22 +5,15 @@ struct EffectsOverlay: View {
     
     var body: some View {
         ZStack {
-            // Brightness overlay
-            Rectangle()
-                .fill(viewModel.getBrightnessOverlayColor())
-                .blendMode(.normal)
-                .allowsHitTesting(false)
-            
-            // Shutter speed overlay (exposure simulation)
+            // Exposure compensation overlay
             Rectangle()
                 .fill(viewModel.getExposureOverlayColor())
-                .blendMode(.multiply)
+                .blendMode(.normal)
                 .allowsHitTesting(false)
         }
         .blur(radius: viewModel.getBlurRadius())
-        .animation(.easeInOut(duration: 0.1), value: viewModel.brightnessControl.value)
+        .animation(.easeInOut(duration: 0.1), value: viewModel.exposureCompensationControl.value)
         .animation(.easeInOut(duration: 0.1), value: viewModel.focusControl.value)
-        .animation(.easeInOut(duration: 0.1), value: viewModel.shutterSpeedControl.value)
     }
 }
 

@@ -44,9 +44,8 @@ struct BaselineControls: View {
             Spacer()
             
             VStack(spacing: 20) {
-                ControlSlider(control: viewModel.brightnessControl)
+                ControlSlider(control: viewModel.exposureCompensationControl)
                 ControlSlider(control: viewModel.focusControl)
-                ControlSlider(control: viewModel.shutterSpeedControl)
             }
             .padding(20)
             .padding(.horizontal, 20)

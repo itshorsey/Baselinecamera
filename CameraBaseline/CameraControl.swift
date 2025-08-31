@@ -21,11 +21,11 @@ extension CameraControl {
     }
 }
 
-class BrightnessControl: CameraControl {
+class ExposureCompensationControl: CameraControl {
     @Published var value: Double
     let range: ClosedRange<Double> = -1.0...1.0
     let defaultValue: Double = 0.0
-    let name: String = "Brightness"
+    let name: String = "EV"
     
     init() {
         self.value = defaultValue
@@ -37,17 +37,6 @@ class FocusControl: CameraControl {
     let range: ClosedRange<Double> = 0.0...1.0
     let defaultValue: Double = 0.5
     let name: String = "Focus"
-    
-    init() {
-        self.value = defaultValue
-    }
-}
-
-class ShutterSpeedControl: CameraControl {
-    @Published var value: Double
-    let range: ClosedRange<Double> = -2.0...2.0
-    let defaultValue: Double = 0.0
-    let name: String = "Shutter Speed"
     
     init() {
         self.value = defaultValue
